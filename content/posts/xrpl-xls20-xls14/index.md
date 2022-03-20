@@ -1,7 +1,7 @@
 ---
 title: 'XLS20とXLS14'
 updated: '2022/03/16'
-tags: []
+tags: [XRP]
 ---
 
 2021 年より XRPL 上での NFT 発行について多くの進展がありました。
