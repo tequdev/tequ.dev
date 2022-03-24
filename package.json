@@ -5,9 +5,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && prettier . --write"
+    "lint": "next lint && prettier . --write",
+    "vercel-build": "cp lib/*so.1 node_modules/canvas/build/Release/ && npm run build"
   },
   "dependencies": {
+    "canvas": "2.6.1",
     "gray-matter": "^4.0.3",
     "next": "12.1.0",
     "react": "17.0.2",
