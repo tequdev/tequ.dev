@@ -5,8 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && prettier . --write",
-    "vercel-build": "cp lib/*so.1 node_modules/canvas/build/Release/ && npm run build"
+    "lint": "next lint && prettier . --write"
   },
   "dependencies": {
     "canvas": "2.6.1",
