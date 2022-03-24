@@ -8,6 +8,7 @@ type Post = {
   slug: string
   content: string
   title: string
+  description?: string
   updated: string
   tags: Tag[]
 }
@@ -53,7 +54,7 @@ const getContentBySlug = <T extends MarkdownContent>(dir: string, slug: string, 
     const fieldData = field === 'slug' ? slug : field === 'content' ? content : (data as { [P in keyof T]: any })[field]
     items = {
       ...items,
-      [field]: fieldData,
+      [field]: fieldData || null,
     }
   })
   return items as T
