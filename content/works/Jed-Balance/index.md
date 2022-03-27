@@ -1,7 +1,7 @@
 ---
 AppName: 'Jed Balance'
-url: '2021/12/27'
 repo: 'jed-balance'
+link: 'https://jed.tequ.dev'
 tags: [XRP]
 ---
 

@@ -1,6 +1,7 @@
 ---
 AppName: 'TrustLine Checker'
 url: '2021/12/27'
+link: 'https://trustline-checker.tequ.dev'
 repo: 'trustline-checker'
 tags: [XRP]
 ---

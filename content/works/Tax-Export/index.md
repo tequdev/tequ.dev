@@ -1,7 +1,8 @@
 ---
 AppName: 'XRP Ledger Tax export for Cryptact'
 url: '2021/12/27'
-repo: 'jed-balance'
+repo: 'xrp-tax-export'
+link: 'https://xrpl-tax.tequ.dev'
 tags: [XRP]
 ---
 

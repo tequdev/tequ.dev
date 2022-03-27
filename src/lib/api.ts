@@ -22,8 +22,8 @@ type About = {
 type Work = {
   content: string
   AppName: string
-  url: string
   repo: string
+  link: string
   updated: string
   tags: Tag[]
 }
