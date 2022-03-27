@@ -3,7 +3,7 @@ import Link from 'next/link'
 export const Menu = () => {
   return (
     <div className='md:m-10'>
-      <div className='p-3 hover:pl-6 m-3 md:m-9 border-l-2 hover:border-l-4 border-green-200  hover:transition-all duration-500'>
+      <div className='p-3 hover:pl-6 m-3 border-l-2 hover:border-l-4 border-green-200 hover:transition-all  duration-500 md:m-9'>
         <Link href='/works'>
           <a>
             <div>WORKS</div>
@@ -13,7 +13,7 @@ export const Menu = () => {
           </a>
         </Link>
       </div>
-      <div className='p-3 hover:pl-6 m-3 md:m-9 border-l-2 hover:border-l-4 border-orange-200 hover:transition-all duration-500'>
+      <div className='p-3 hover:pl-6 m-3 border-l-2 hover:border-l-4 border-orange-200 hover:transition-all duration-500 md:m-9'>
         <Link href='/posts'>
           <a>
             <div>POSTS</div>
@@ -23,7 +23,7 @@ export const Menu = () => {
           </a>
         </Link>
       </div>
-      <div className='p-3 hover:pl-6 m-3 md:m-9 border-l-2 hover:border-l-4 border-sky-200 hover:transition-all duration-500'>
+      <div className='p-3 hover:pl-6 m-3 border-l-2 hover:border-l-4 border-sky-200 hover:transition-all duration-500 md:m-9'>
         <Link href='/about'>
           <a>
             <div>ABOUT</div>

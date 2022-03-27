@@ -13,13 +13,13 @@ export const BreadCrumbs = ({ lists }: BreadCrumbsProps) => {
   }
 
   return (
-    <ol className='text-gray-600 flex overflow-x-auto whitespace-nowrap my-3 md:my-6' aria-label='breadcrumb'>
+    <ol className='flex overflow-x-auto my-3 text-gray-600 whitespace-nowrap md:my-6' aria-label='breadcrumb'>
       {lists.map(({ string, path }, index) => (
         <li className='flex items-center' key={index}>
           {lists.length - 1 !== index ? (
             <>
               <Link href={`${path}`}>
-                <a className='text-sm md:text-base hover:underline'>{string}</a>
+                <a className='text-sm hover:underline md:text-base'>{string}</a>
               </Link>
               <span className='px-2 text-sm md:text-base'>&gt;</span>
             </>
