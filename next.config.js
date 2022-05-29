@@ -4,6 +4,7 @@ const nextConfig = {
   experimental: {
     optimizeFonts: true,
   },
+  swcMinify: false,
 }
 
 module.exports = nextConfig
