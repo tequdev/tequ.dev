@@ -1,10 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import feeds from '../../builder/posts.json'
 
-type Tag = 'XRP' | 'ILP' | 'Other'
+type Tag = 'XRP' | 'ILP' | 'Other' | 'Zenn' | 'Qiita'
 
 type Post = {
+  url?: string
   slug: string
   content: string
   title: string
@@ -60,16 +62,33 @@ const getContentBySlug = <T extends MarkdownContent>(dir: string, slug: string, 
   return items as T
 }
 
+const getFeedContents = (): Post[] => {
+  return feeds.map(
+    (feed): Post => ({
+      url: feed.link,
+      slug: '',
+      content: feed.contentSnippet,
+      title: feed.title,
+      description: feed.contentSnippet,
+      updated: feed.isoDate.split('T')[0].replace(/-/g, '/'),
+      tags: feed.link.includes('zenn.dev') ? ['Zenn'] : feed.link.includes('qiita.com') ? ['Qiita'] : [],
+    })
+  )
+}
+
 /**
  * すべての記事について、指定したフィールドの値を取得して返す
  * @param fields 取得するフィールド
  */
-const getAllContents = <T extends MarkdownContent>(dir: string, fields: (keyof T)[] = []) => {
+const getAllContents = <T extends MarkdownContent>(dir: string, fields: (keyof T)[] = []): T[] => {
   const slugs = getContentSlugs(dir)
-  const contents = slugs
-    .map((slug) => getContentBySlug<T>(dir, slug, fields))
-    .sort((a, b) => (a.updated && b.updated && a.updated > b.updated ? -1 : 1))
-  return contents
+  let contents = slugs.map((slug) => getContentBySlug<T>(dir, slug, fields))
+  if (dir === 'posts') {
+    const feedContents = getFeedContents()
+    const posts = [...(contents as Post[]), ...feedContents]
+    return posts.sort((a, b) => (a.updated && b.updated && a.updated > b.updated ? -1 : 1)) as unknown as T[]
+  }
+  return contents.sort((a, b) => (a.updated && b.updated && a.updated > b.updated ? -1 : 1))
 }
 
 export const getAllPosts = (fields: (keyof Post)[] = []) => {

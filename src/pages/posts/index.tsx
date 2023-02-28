@@ -8,7 +8,7 @@ import { Footer } from '@/components/Footer'
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts(['slug', 'title', 'updated', 'tags'])
+  const allPosts = getAllPosts(['url','slug', 'title', 'updated', 'tags'])
   return {
     props: { allPosts },
   }
@@ -38,9 +38,14 @@ const Posts: NextPage<Props> = ({ allPosts }) => {
         <h1 className='pl-4 border-l-4 border-green-200 text-4xl'>Posts</h1>
         <div className='my-10'>
           {allPosts.map((post) => (
-            <Link href={`posts/${post.slug}`} key={post.slug}>
-              <a className='block my-2 md:m-4 p-4 md:p-6 border-2 rounded-2xl hover:shadow hover:transition-all duration-500'>
-                <h4>{post.title}</h4>
+            <Link href={post.url || `posts/${post.slug}`} passHref key={post.url || post.slug}>
+              <a target={post.url ? '_blank' : undefined} className='block my-2 md:m-4 px-4 pb-4 pt-2 md:p-6 border-2 rounded-2xl hover:shadow hover:transition-all duration-500'>
+                <div className='text-sm mb-2'>
+                  {post.tags.map((tag,index) => 
+                    <span key={index} className='border-2 p-1 mr-1 font-nomal'>{tag}</span>
+                  )}
+                </div>
+                <h4 className='text-lg font-medium'>{post.title}</h4>
                 <span className='text-sm text-gray-400'>{post.updated}</span>
               </a>
             </Link>

@@ -17,7 +17,8 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
  * 記事のパスを取得する
  */
 export const getStaticPaths = async () => {
-  const posts = getAllPosts(['slug', 'title'])
+  const posts = getAllPosts(['slug', 'title', 'tags'])
+    .filter((post) => !post.tags?.find(tag => tag === 'Zenn' || tag === 'Qiita'))
   posts.forEach((post) => createOgp(post.slug, post.title))
 
   return {
