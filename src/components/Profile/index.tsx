@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export const Profile = () => {
   return (
     <div className='flex-row text-center align-bottom md:flex content'>

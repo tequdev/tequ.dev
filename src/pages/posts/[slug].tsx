@@ -17,8 +17,9 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
  * 記事のパスを取得する
  */
 export const getStaticPaths = async () => {
-  const posts = getAllPosts(['slug', 'title', 'tags'])
-    .filter((post) => !post.tags?.find(tag => tag === 'Zenn' || tag === 'Qiita'))
+  const posts = getAllPosts(['slug', 'title', 'tags']).filter(
+    (post) => !post.tags?.find((tag) => tag === 'Zenn' || tag === 'Qiita')
+  )
   posts.forEach((post) => createOgp(post.slug, post.title))
 
   return {
@@ -57,7 +58,7 @@ const Post: NextPage<Props> = ({ post }) => {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <div className='p-4 mx-auto md:p-6'>
+    <>
       <Head>
         <title>{post.title}</title>
         {!!post.description && <meta name='description' content={post.description} />}
@@ -72,34 +73,31 @@ const Post: NextPage<Props> = ({ post }) => {
         <meta name='twitter:creator' content='@_TeQu_' />
       </Head>
 
-      <main className='mx-auto max-w-3xl min-h-screen'>
-        <BreadCrumbs
-          lists={[
-            {
-              string: 'TeQu',
-              path: '/',
-            },
-            {
-              string: 'Posts',
-              path: '/posts',
-            },
-            {
-              string: `${post.title}`,
-              path: `/posts/${post.slug}`,
-            },
-          ]}
+      <BreadCrumbs
+        lists={[
+          {
+            string: 'TeQu',
+            path: '/',
+          },
+          {
+            string: 'Posts',
+            path: '/posts',
+          },
+          {
+            string: `${post.title}`,
+            path: `/posts/${post.slug}`,
+          },
+        ]}
+      />
+      <article className='my-10'>
+        <h1 className='pl-4 mb-4 text-4xl border-l-4 border-orange-200'>{post.title}</h1>
+        <p className='text-gray-500'>{post.updated}</p>
+        <div
+          className='my-10 markdown'
+          dangerouslySetInnerHTML={{ __html: post.content.replace(/href/g, "target='_blank' href") }}
         />
-        <article className='my-10'>
-          <h1 className='pl-4 mb-4 text-4xl border-l-4 border-green-200'>{post.title}</h1>
-          <p className='text-gray-500'>{post.updated}</p>
-          <div
-            className='my-10 markdown'
-            dangerouslySetInnerHTML={{ __html: post.content.replace(/href/g, "target='_blank' href") }}
-          />
-        </article>
-      </main>
-      <Footer />
-    </div>
+      </article>
+    </>
   )
 }
 

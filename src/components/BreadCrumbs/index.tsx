@@ -13,7 +13,7 @@ export const BreadCrumbs = ({ lists }: BreadCrumbsProps) => {
   }
 
   return (
-    <ol className='flex overflow-x-auto my-3 text-gray-600 whitespace-nowrap md:my-6' aria-label='breadcrumb'>
+    <ol className='flex overflow-x-auto my-3 text-gray-600 whitespace-nowrap' aria-label='breadcrumb'>
       {lists.map(({ string, path }, index) => (
         <li className='flex items-center' key={index}>
           {lists.length - 1 !== index ? (
