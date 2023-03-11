@@ -5,4 +5,4 @@ link: 'https://faucet.tequ.dev'
 tags: [XRP]
 ---
 
-Provides XRP to XRP Ledger's testnet address.
+Provides XRP or Tokens to XRP Ledger's testnet address.
