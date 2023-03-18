@@ -1,0 +1,14 @@
+# xrp-ledger.toml file by tequ.dev
+#
+[METADATA]
+modified = 2023-03-18T11:00:00.000Z
+
+[[ACCOUNTS]]
+address = "rQQQrUdN1cLdNmxH4dHfKgmX5P4kf3ZrM"
+network = "main"
+desc = "tequ"
+[[PRINCIPALS]]
+name = "tequ"
+email = "info@tequ.dev"
+twitter = "@_TeQu_"
+# End of file
