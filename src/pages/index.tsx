@@ -1,15 +1,12 @@
 import type { InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
 import { getAllPosts } from '@/lib/api'
-import { Profile } from '@/components/Profile'
-import { Menu } from '@/components/Menu'
-import { Footer } from '@/components/Footer'
 import Link from 'next/link'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts(['slug', 'title', 'updated', 'tags'])
+  const allPosts = getAllPosts(['url','slug', 'title', 'updated', 'tags'])
   return {
     props: { allPosts },
   }

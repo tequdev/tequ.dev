@@ -1,5 +1,4 @@
 import { BreadCrumbs } from '@/components/BreadCrumbs'
-import { Footer } from '@/components/Footer'
 import { getAllWorks } from '@/lib/api'
 import { InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
