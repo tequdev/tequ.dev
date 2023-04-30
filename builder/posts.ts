@@ -1,6 +1,7 @@
 import fs from 'fs-extra'
 import Parser from 'rss-parser'
 import { feeds } from './feeds'
+import { fetchFromQiitaAPI } from './api'
 
 type FeedItem = {
   title: string
@@ -20,7 +21,7 @@ function isValidUrl(str: string): boolean {
 }
 
 const parser = new Parser()
-let allPostItems:any[] = []
+let allPostItems: any[] = []
 
 async function fetchFeedItems(url: string) {
   const feed = await parser.parseURL(url)
@@ -56,10 +57,14 @@ async function getFeedItems(sources: string): Promise<any[]> {
 }
 
 ;(async function () {
+  // feed
   for (const member of feeds) {
     const items = await getFeedItems(member)
     if (items) allPostItems = [...allPostItems, ...items]
   }
+  // api
+  const qiitaItems = await fetchFromQiitaAPI()
+  allPostItems = [...allPostItems, ...qiitaItems]
   allPostItems.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds)
   fs.writeJsonSync('builder/posts.json', allPostItems)
 })()
