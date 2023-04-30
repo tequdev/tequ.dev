@@ -17,7 +17,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
  */
 export const getStaticPaths = async () => {
   const posts = getAllPosts(['slug', 'title', 'tags']).filter(
-    (post) => !post.tags?.find((tag) => tag === 'Zenn' || tag === 'Qiita')
+    (post) => !post.tags?.find((tag) => tag === 'Zenn' || tag === 'Qiita' || tag === 'Note')
   )
   posts.forEach((post) => createOgp(post.slug, post.title))
 
