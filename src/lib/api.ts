@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import feeds from '../../builder/posts.json'
 
-type Tag = 'XRP' | 'ILP' | 'Other' | 'Zenn' | 'Qiita'
+type Tag = 'XRP' | 'ILP' | 'Other' | 'Zenn' | 'Qiita' | 'Note'
 
 type Post = {
   url?: string
@@ -71,7 +71,7 @@ const getFeedContents = (): Post[] => {
       title: feed.title,
       description: feed.contentSnippet,
       updated: feed.isoDate.split('T')[0].replace(/-/g, '/'),
-      tags: feed.link.includes('zenn.dev') ? ['Zenn'] : feed.link.includes('qiita.com') ? ['Qiita'] : [],
+      tags: feed.link.includes('zenn.dev') ? ['Zenn'] : feed.link.includes('qiita.com') ? ['Qiita'] : feed.link.includes('note.com') ? ['Note'] : [],
     })
   )
 }
