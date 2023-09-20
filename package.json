@@ -4,13 +4,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "yarn build:prepare && yarn build:next",
+    "vercel-build": "yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel",
     "build:prepare": "ts-node --project tsconfig.builder.json ./builder/posts.ts",
     "build:next": "next build",
     "start": "next start",
     "lint": "next lint && prettier . --write"
   },
   "dependencies": {
-    "canvas": "^2.11.2",
+    "canvas": "2.8.0",
     "fs-extra": "^11.1.0",
     "gray-matter": "^4.0.3",
     "next": "12.1.0",
