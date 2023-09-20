@@ -1,14 +1,23 @@
 # xrp-ledger.toml file by tequ.dev
 #
 [METADATA]
-modified = 2023-03-18T11:00:00.000Z
+modified = 2023-09-20T04:00:00.000Z
 
 [[ACCOUNTS]]
 address = "rQQQrUdN1cLdNmxH4dHfKgmX5P4kf3ZrM"
 network = "main"
 desc = "tequ"
+
 [[PRINCIPALS]]
 name = "tequ"
-email = "info@tequ.dev"
-twitter = "@_TeQu_"
+email = "me@tequ.dev"
+twitter = "@_tequ_"
+
+[[VALIDATORS]]
+public_key = "nHUxjxKPeErbN7pNk9UWA5Ee7ZPMtesSeRGJtmdqkTxe94tqM2YX"
+network = "main"
+attestation = "22406699AD2AE72D0CBA651755CC9C0A790C7DE8D7E6B27FE135C088049A457AE599FAFF611B1AA9EBCB36DB2F5BF09ECFC556ABD0A90EEC805E18CA23B05E03"
+owner_country = "jp"
+unl = "https://vl.xrplf.org"
+
 # End of file
