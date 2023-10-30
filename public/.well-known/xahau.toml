@@ -1,0 +1,28 @@
+# xahau.toml file by tequ.dev
+#
+[METADATA]
+modified = 2023-10-31T22:00:00.000Z
+
+[[ACCOUNTS]]
+address = "rtequsfcSxEerbj18TdS6hUd89vTbaWec"
+network = "main"
+desc = "tequ"
+
+[[ACCOUNTS]]
+address = "rQQQrUdN1cLdNmxH4dHfKgmX5P4kf3ZrM"
+network = "main"
+desc = "tequ"
+
+[[PRINCIPALS]]
+name = "tequ"
+email = "me@tequ.dev"
+twitter = "@_tequ_"
+
+[[VALIDATORS]]
+public_key = "nHUWa7fPeMZtAFQnUc6abfD772B7rtFG4pX4mcfBDyCczZqvsQ8a"
+network = "main"
+attestation = "74BECB363EB0465F5B936D067EF72F74F55191D0FDB4CF6D7262334C4404EC451ACCE78FF3121D9F7ACB57F3F236FEDEE4C3C7999F40AD751A15ECBDE48EE00A"
+owner_country = "jp"
+unl = "https://vl.xahau.org"
+
+# End of file
