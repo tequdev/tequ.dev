@@ -16,15 +16,15 @@ export const Works: NextPage<Props> = ({ allWorks }) => {
   return (
     <>
       <Head>
-        <title>Works | TeQu</title>
-        <meta name='description' content='Works by TeQu' />
+        <title>Works | qequ</title>
+        <meta name='description' content='Works by tequ' />
         <link rel='icon' href='/favicon.svg' />
       </Head>
 
       <BreadCrumbs
         lists={[
           {
-            string: 'TeQu',
+            string: 'tequ',
             path: '/',
           },
           {

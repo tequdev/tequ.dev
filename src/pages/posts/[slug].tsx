@@ -69,13 +69,13 @@ const Post: NextPage<Props> = ({ post }) => {
         <meta property='og:image' content={`${baseUrl}/ogp/${post.slug}.png`} />
         {!!post.description && <meta name='og:description' content={post.description} />}
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:creator' content='@_TeQu_' />
+        <meta name='twitter:creator' content='@_tequ_' />
       </Head>
 
       <BreadCrumbs
         lists={[
           {
-            string: 'TeQu',
+            string: 'tequ',
             path: '/',
           },
           {

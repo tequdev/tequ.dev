@@ -16,9 +16,9 @@ const Home: NextPage<Props> = ({ allPosts }) => {
   return (
     <>
       <Head>
-        <title>TeQu</title>
+        <title>tequ</title>
         <link href='https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap' rel='stylesheet' />
-        <meta name='description' content='TeQu, A XRP Ledger ecosystem developer from Japan' />
+        <meta name='description' content='tequ, A XRP Ledger ecosystem developer from Japan' />
         <link rel='icon' href='/favicon.svg' />
       </Head>
       <div>

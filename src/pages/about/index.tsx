@@ -39,7 +39,7 @@ const About: NextPage<Props> = ({ about }) => {
       <BreadCrumbs
         lists={[
           {
-            string: 'TeQu',
+            string: 'tequ',
             path: '/',
           },
           {
