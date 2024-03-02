@@ -5,7 +5,7 @@ export const Profile = () => {
         Te<span style={{ color: 'rgb(83, 86, 227)' }}>Q</span>u
       </h1>
       <div className='pt-4 align-bottom md:px-6 md:pt-8 md:text-left'>
-        <span className='text-gray-500'>A XRP Ledger ecosystem devleloper</span>
+        <span className='text-gray-500'>A XRP Ledger ecosystem developer</span>
       </div>
     </div>
   )
