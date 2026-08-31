@@ -1,44 +1,25 @@
 {
-  "name": "nextjs-template",
+  "name": "tequ.dev",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "yarn build:prepare && yarn build:next",
-    "vercel-build": "yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel",
-    "build:prepare": "ts-node --project tsconfig.builder.json ./builder/posts.ts",
-    "build:next": "next build",
-    "start": "next start",
-    "lint": "next lint && prettier . --write"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "biome check --write ."
   },
   "dependencies": {
-    "@vercel/analytics": "^1.2.2",
-    "canvas": "2.8.0",
-    "fs-extra": "^11.1.0",
-    "gray-matter": "^4.0.3",
-    "next": "12.1.0",
-    "node-fetch": "2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.1",
-    "rss-parser": "^3.12.0",
-    "tailwindcss-classnames": "^3.0.2",
-    "ts-node": "^10.9.1"
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/source-serif-4": "^5.3.0",
+    "astro": "^7.2.4"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.1",
-    "@types/node": "17.0.21",
-    "@types/node-fetch": "^2.6.3",
-    "@types/react": "17.0.40",
-    "autoprefixer": "^10.4.2",
-    "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-tailwindcss": "^3.5.0",
-    "postcss": "^8.4.8",
-    "prettier": "^2.5.1",
-    "sass": "^1.49.9",
-    "tailwindcss": "^3.0.23",
-    "typescript": "4.6.2"
+    "@biomejs/biome": "^2.5.9",
+    "@types/node": "^26.2.0",
+    "typescript": "^7.0.2"
+  },
+  "packageManager": "pnpm@11.10.0",
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

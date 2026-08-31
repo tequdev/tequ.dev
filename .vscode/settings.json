@@ -1,10 +1,4 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": [
-    "source.fixAll.eslint"
-  ],
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+  "editor.defaultFormatter": "biomejs.biome"
 }
