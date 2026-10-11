@@ -1,0 +1,43 @@
+---
+import '@fontsource/ibm-plex-mono/400.css'
+import '@fontsource/source-serif-4/400.css'
+import '../styles/global.css'
+
+const year = new Date().getFullYear()
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>tequ</title>
+    <meta
+      name="description"
+      content="tequ, A XRP Ledger ecosystem developer from Japan"
+    />
+    <meta name="theme-color" content="#0a0c16" />
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header>
+      <span>tequ.dev</span>
+      <span>XRPL · XAHAU</span>
+    </header>
+    <main>
+      <p class="eyebrow">
+        <span class="pulse" aria-hidden="true"></span>
+        ledger
+      </p>
+      <h1>tequ</h1>
+      <p class="tagline">XRP Ledger ecosystem developer from Japan.</p>
+      <nav aria-label="Links">
+        <a href="https://x.com/_tequ_"><span>X</span><span class="url">x.com/_tequ_</span></a>
+        <a href="https://github.com/tequdev"><span>GitHub</span><span class="url">github.com/tequdev</span></a>
+        <a href="mailto:me@tequ.dev"><span>Email</span><span class="url">me@tequ.dev</span></a>
+      </nav>
+    </main>
+    <footer>© tequ {year}</footer>
+  </body>
+</html>
