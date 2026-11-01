@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro'
+
+const sites = [
+  {
+    name: 'Xahau Hooks Docs',
+    url: 'https://docs.xahau.tools',
+    desc: 'Reference documentation for Xahau Hook smart contracts.',
+  },
+  {
+    name: 'Validator List Decoder',
+    url: 'https://vl-decoder.vercel.app',
+    desc: 'Decode XRPL / Xahau validator lists (VL / UNL) in the browser.',
+  },
+  {
+    name: 'Xahau Export Dashboard',
+    url: 'https://xahau-export.vercel.app',
+    desc: 'Visualizes Xahau Export round trips to XRPL Testnet.',
+  },
+  {
+    name: 'XRP Ledger Public Servers',
+    url: 'https://public-servers.tequ.dev',
+    desc: 'Server versions and amendments across XRPL and Xahau networks.',
+  },
+  {
+    name: 'XRPL Dynamic NFT Modifier',
+    url: 'https://xrpl-dnft.vercel.app',
+    desc: 'Modify the URI of dynamic NFTs on the XRP Ledger.',
+  },
+  {
+    name: 'XRPL Fee Voting',
+    url: 'https://xrpl-fee-voting.vercel.app',
+    desc: 'Fee voting status of XRP Ledger validators.',
+  },
+  {
+    name: 'wasm-to-readable-c',
+    url: 'https://hooks-to-readable-c-webapp.vercel.app',
+    desc: 'Heuristic .wasm / .wat to readable C converter for Hooks.',
+  },
+  {
+    name: 'XRPL Transaction Dedupe',
+    url: 'https://xrpl-tx-dedupe.vercel.app',
+    desc: 'Find duplicate transactions on the XRP Ledger.',
+  },
+  {
+    name: 'XHS State Viewer',
+    url: 'https://hooks-schema-viewer.vercel.app',
+    desc: 'View Hook state decoded with the Hooks schema ABI.',
+  },
+  {
+    name: 'XRP Easy NFT',
+    url: 'https://xrp-easy-nft.vercel.app',
+    desc: "Easy access to XRP Ledger's NFT.",
+  },
+  {
+    name: 'XRPL Stablecoins Metrics',
+    url: 'https://xrpl-stablecoins.vercel.app',
+    desc: 'Volume and exchange analytics for XRPL stablecoins.',
+  },
+  {
+    name: 'XRPL/Xahau DEX Metrics',
+    url: 'https://metrics.tequ.dev',
+    desc: 'A dashboard for the XRPL / Xahau DEX.',
+  },
+  {
+    name: 'dropchan',
+    url: 'https://dropchan.com',
+    desc: 'A kawaii NFT project on the XRP Ledger.',
+  },
+]
+
+const packages = [
+  {
+    name: 'hooks-compiler',
+    desc: 'Deterministic Xahau C Hook compiler running clang, lld, wasm-opt and hook-cleaner.',
+  },
+  {
+    name: '@tequ/hooks-toolkit',
+    desc: 'A toolkit for interacting with Hooks on the Xahau Ledger.',
+  },
+  {
+    name: '@tequ/xahau',
+    desc: 'A TypeScript/JavaScript API for the Xahau Ledger in Node.js and the browser.',
+  },
+  {
+    name: '@tequ/xahau-binary-codec',
+    desc: 'Xahau Ledger binary codec.',
+  },
+].map((p) => ({ ...p, url: `https://www.npmjs.com/package/${p.name}` }))
+
+const host = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '')
+---
+
+<Base title="Tools · tequ" description="Web sites and npm packages published by tequ">
+  <p class="eyebrow">
+    <span class="pulse" aria-hidden="true"></span>
+    tools
+  </p>
+  <h1>Tools</h1>
+  <p class="tagline">Web sites and npm packages I publish, updated within the last year.</p>
+  <section aria-labelledby="sites">
+    <p class="eyebrow" id="sites">Sites</p>
+    <nav aria-label="Sites">
+      {
+        sites.map((s) => (
+          <a href={s.url}>
+            <span>
+              {s.name}
+              <small>{s.desc}</small>
+            </span>
+            <span class="url">{host(s.url)}</span>
+          </a>
+        ))
+      }
+    </nav>
+  </section>
+  <section aria-labelledby="packages">
+    <p class="eyebrow" id="packages">Packages</p>
+    <nav aria-label="Packages">
+      {
+        packages.map((p) => (
+          <a href={p.url}>
+            <span>
+              {p.name}
+              <small>{p.desc}</small>
+            </span>
+            <span class="url">npm</span>
+          </a>
+        ))
+      }
+    </nav>
+  </section>
+</Base>
