@@ -1,0 +1,122 @@
+---
+import Base from '../layouts/Base.astro'
+
+const sites = [
+  {
+    name: 'Xahau Hooks Docs',
+    url: 'https://docs.xahau.tools',
+    desc: 'Reference documentation for Xahau Hook smart contracts.',
+  },
+  {
+    name: 'Validator List Decoder',
+    url: 'https://vl-decoder.vercel.app',
+    desc: 'Decode XRPL / Xahau validator lists (VL / UNL) in the browser.',
+  },
+  {
+    name: 'Xahau Export Dashboard',
+    url: 'https://xahau-export.vercel.app',
+    desc: 'Visualizes Xahau Export round trips to XRPL Testnet.',
+  },
+  {
+    name: 'XRP Ledger / Xahau Public Servers',
+    url: 'https://public-servers.tequ.dev',
+    desc: 'Server versions and amendments across XRPL and Xahau networks.',
+  },
+  {
+    name: 'XRPL Dynamic NFT Modifier',
+    url: 'https://xrpl-dnft.vercel.app',
+    desc: 'Modify the URI of dynamic NFTs on the XRP Ledger.',
+  },
+  {
+    name: 'XRPL Fee Voting',
+    url: 'https://xrpl-fee-voting.vercel.app',
+    desc: 'Fee voting status of XRP Ledger validators.',
+  },
+  // {
+  //   name: 'XHS State Viewer',
+  //   url: 'https://hooks-schema-viewer.vercel.app',
+  //   desc: 'View Hook state decoded with the Hooks schema ABI.',
+  // },
+  {
+    name: 'XRPL/Xahau DEX Metrics',
+    url: 'https://metrics.tequ.dev',
+    desc: 'A dashboard for the XRPL / Xahau DEX.',
+  },
+  {
+    name: 'Xahau Hook Tx Builder',
+    url: 'https://tx-builder.xahau.tools',
+    desc: 'Build and sign transactions that trigger Xahau Hooks.',
+  },
+  {
+    name: 'Xahau Binary Visualizer',
+    url: 'https://binary-visualizer.xahau.tools',
+    desc: 'Visualize STObjects such as transactions and ledgers from Xahau.',
+  },
+  {
+    name: 'Xahau Devnets',
+    url: 'https://xahau-dev.net',
+    desc: 'Multiple Xahau devnet clusters for development and testing.',
+  },
+  {
+    name: 'dropchan',
+    url: 'https://dropchan.com',
+    desc: 'A kawaii NFT project on the XRP Ledger.',
+  },
+]
+
+const packages = [
+  {
+    name: 'hooks-compiler',
+    url: 'https://www.npmjs.com/package/hooks-compiler',
+    desc: 'Deterministic Xahau C Hook compiler running clang, lld, wasm-opt and hook-cleaner.',
+  },
+  {
+    name: 'rshooks',
+    url: 'https://crates.io/crates/rshooks',
+    desc: 'Ergonomic no_std library for writing Xahau Hooks in Rust.',
+  },
+]
+
+const host = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '')
+---
+
+<Base title="Tools · tequ" description="Web sites and npm packages published by tequ">
+  <p class="eyebrow">
+    <span class="pulse" aria-hidden="true"></span>
+    tools
+  </p>
+  <h1>Tools</h1>
+  <p class="tagline">Web sites and npm packages I publish, updated within the last year.</p>
+  <section aria-labelledby="sites">
+    <p class="eyebrow" id="sites">Sites</p>
+    <nav aria-label="Sites">
+      {
+        sites.map((s) => (
+          <a href={s.url}>
+            <span>
+              {s.name}
+              <small>{s.desc}</small>
+            </span>
+            <span class="url">{host(s.url)}</span>
+          </a>
+        ))
+      }
+    </nav>
+  </section>
+  <section aria-labelledby="packages">
+    <p class="eyebrow" id="packages">Packages</p>
+    <nav aria-label="Packages">
+      {
+        packages.map((p) => (
+          <a href={p.url}>
+            <span>
+              {p.name}
+              <small>{p.desc}</small>
+            </span>
+            <span class="url">{host(p.url)}</span>
+          </a>
+        ))
+      }
+    </nav>
+  </section>
+</Base>

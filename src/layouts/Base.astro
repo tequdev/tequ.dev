@@ -1,0 +1,35 @@
+---
+import '@fontsource/ibm-plex-mono/400.css'
+import '@fontsource/source-serif-4/400.css'
+import '../styles/global.css'
+
+interface Props {
+  title: string
+  description: string
+}
+const { title, description } = Astro.props
+const year = new Date().getFullYear()
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0c16" />
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header>
+      <a href="/">tequ.dev</a>
+      <span>XRPL · XAHAU</span>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>© tequ {year}</footer>
+  </body>
+</html>
